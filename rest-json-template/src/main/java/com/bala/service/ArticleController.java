@@ -24,7 +24,7 @@ import com.bala.domain.Article;
 public class ArticleController {
 
 	/**
-	 * URL Template : http://localhost:8080/Rest-JSON-Template/action/article/
+	 * URL Template : http://localhost:8080/rest-json-template/action/article/
 	 * 
 	 * @return Response Object
 	 */
@@ -41,7 +41,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/Rest-JSON-Template/action/article/1234
+	 * URL Template : http://localhost:8080/rest-json-template/action/article/1234
 	 * 
 	 * @return Response Object
 	 */
@@ -55,7 +55,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/Rest-JSON-Template/action/article/
+	 * URL Template : http://localhost:8080/rest-json-template/action/article/
 	 * 
 	 * @return Response Object
 	 */
@@ -77,7 +77,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/Rest-JSON-Template/action/article/1234
+	 * URL Template : http://localhost:8080/rest-json-template/action/article/1234
 	 * 
 	 * @return Response Object
 	 */
@@ -99,7 +99,7 @@ public class ArticleController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/Rest-JSON-Template/action/article/1234
+	 * URL Template : http://localhost:8080/rest-json-template/action/article/1234
 	 * 
 	 * @return Response Object
 	 */
