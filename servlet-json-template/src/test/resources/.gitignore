@@ -1,0 +1,4 @@
+# Create resources that need to be accessed from Test classpath
+*
+# Ignore this file
+!.gitignore
