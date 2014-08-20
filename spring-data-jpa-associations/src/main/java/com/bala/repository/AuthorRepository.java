@@ -11,10 +11,10 @@ import com.bala.model.BookEntity;
 @Transactional
 public interface AuthorRepository extends JpaRepository<AuthorEntity, String> {
 
-	List<BookEntity> findById(String id);
+	List<AuthorEntity> findById(String id);
 
-	List<BookEntity> findByName(String name);
+	List<AuthorEntity> findByName(String name);
 
-	List<BookEntity> findByDescription(String description);
+	List<AuthorEntity> findByDescription(String description);
 
 }

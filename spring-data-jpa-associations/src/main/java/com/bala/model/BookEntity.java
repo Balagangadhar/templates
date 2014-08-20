@@ -1,6 +1,5 @@
 package com.bala.model;
 
-import java.util.Collection;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -19,6 +18,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "BOOK")
 public class BookEntity {
 
+	public Set<AuthorEntity> getAuthors() {
+		return authors;
+	}
+
 	@Id
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
@@ -34,26 +37,26 @@ public class BookEntity {
 	@ManyToMany(fetch = FetchType.EAGER)
 	Set<AuthorEntity> authors;
 
+	public void setAuthors(Set<AuthorEntity> authors) {
+		this.authors = authors;
+	}
+
 	@OneToMany(fetch = FetchType.EAGER)
 	Set<PageEntity> pages;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	PublisherEntity bookEntity;
+	PublisherEntity publisherEntity;
+
+	public PublisherEntity getPublisherEntity() {
+		return publisherEntity;
+	}
+
+	public void setPublisherEntity(PublisherEntity publisherEntity) {
+		this.publisherEntity = publisherEntity;
+	}
 
 	public String getId() {
 		return id;
-	}
-
-	public PublisherEntity getBookEntity() {
-		return bookEntity;
-	}
-
-	public void setBookEntity(PublisherEntity bookEntity) {
-		this.bookEntity = bookEntity;
-	}
-
-	public Collection<AuthorEntity> getAuthors() {
-		return authors;
 	}
 
 	public Set<PageEntity> getPages() {
@@ -62,10 +65,6 @@ public class BookEntity {
 
 	public void setPages(Set<PageEntity> pages) {
 		this.pages = pages;
-	}
-
-	public void setAuthors(Set<AuthorEntity> authors) {
-		this.authors = authors;
 	}
 
 	public void setId(String id) {

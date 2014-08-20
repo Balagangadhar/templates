@@ -12,6 +12,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "AUTHOR")
 public class AuthorEntity {
@@ -28,6 +30,7 @@ public class AuthorEntity {
 	@Column(name = "DESCRIPTION")
 	private String description;
 
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "authors")
 	Set<BookEntity> books;
 
@@ -45,6 +48,14 @@ public class AuthorEntity {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<BookEntity> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<BookEntity> books) {
+		this.books = books;
 	}
 
 	public String getDescription() {

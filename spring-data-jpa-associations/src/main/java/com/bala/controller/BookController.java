@@ -1,6 +1,5 @@
 package com.bala.controller;
 
-import java.awt.print.Book;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import com.bala.service.BookService;
 
 /**
  * @author Bala
- *
+ * 
  */
 @Controller
 @RequestMapping(value = BookController.BASE_URL)
@@ -27,7 +26,8 @@ public class BookController {
 	private BookService bookService;
 
 	/**
-	 * URL Template : http://localhost:8080/spring-data-jpa-associations/action/book/
+	 * URL Template :
+	 * http://localhost:8080/spring-data-jpa-associations/action/book/
 	 * 
 	 * @return Response Object
 	 */
@@ -38,19 +38,21 @@ public class BookController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/spring-data-jpa-associations/action/book/1
+	 * URL Template :
+	 * http://localhost:8080/spring-data-jpa-associations/action/book/1
 	 * 
 	 * @return Response Object
 	 */
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	public BookEntity get(@PathVariable("id") String id, Book book) {
+	public BookEntity get(@PathVariable("id") String id) {
 		return bookService.get(id);
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/spring-data-jpa-associations/action/book
+	 * URL Template :
+	 * http://localhost:8080/spring-data-jpa-associations/action/book
 	 * 
 	 * @return Response Object
 	 */
@@ -62,19 +64,20 @@ public class BookController {
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/spring-data-jpa-associations/action/book/1
+	 * URL Template :
+	 * http://localhost:8080/spring-data-jpa-associations/action/book/1
 	 * 
 	 * @return Response Object
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public BookEntity update(@PathVariable("id") String id,
-			@RequestBody BookEntity bookEntity) {
+	public BookEntity update(@PathVariable("id") String id, @RequestBody BookEntity bookEntity) {
 		return bookService.update(id, bookEntity);
 	}
 
 	/**
-	 * URL Template : http://localhost:8080/spring-data-jpa-associations/action/book/1
+	 * URL Template :
+	 * http://localhost:8080/spring-data-jpa-associations/action/book/1
 	 * 
 	 * @return Response Object
 	 */
