@@ -1,0 +1,15 @@
+.icon-create {
+	background-image: url(images/icons/new.png) !important;
+}
+
+.icon-delete {
+	background-image: url(images/icons/delete.png) !important;
+}
+
+.icon-search {
+	background-image: url(images/icons/search.png) !important;
+}
+
+.icon-refresh {
+	background-image: url(images/icons/refresh.gif) !important;
+}
