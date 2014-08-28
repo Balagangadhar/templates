@@ -14,6 +14,8 @@ public class ArticleService {
 	private ArticleRepository articleRepository;
 
 	public ArticleEntity create(ArticleEntity articleEntity) {
+
+		
 		return articleRepository.save(articleEntity);
 	}
 

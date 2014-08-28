@@ -45,7 +45,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -63,6 +63,13 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+
+		<!-- minuteproject -->
+		<dependency>
+			<groupId>net.sf.minuteproject</groupId>
+			<artifactId>mp-bsla-jpa</artifactId>
+			<version>${minuteproject.versoin}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -90,5 +97,6 @@
 		<postgresql.version>9.2-1003-jdbc4</postgresql.version>
 		<jackson.version>2.2.2</jackson.version>
 		<javaee.version>6.0</javaee.version>
+		<minuteproject.versoin>0.8.10</minuteproject.versoin>
 	</properties>
 </project>
