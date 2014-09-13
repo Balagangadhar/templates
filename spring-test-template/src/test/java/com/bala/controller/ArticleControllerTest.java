@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("/resources/spring/rest-servlet.xml")
+@ContextConfiguration("/spring/rest-servlet.xml")
 public class ArticleControllerTest {
 
 	private final static Logger logger = LoggerFactory
