@@ -3,4 +3,5 @@
 .settings/
 target/
 ext/
+extjs/
 mxgraph/
