@@ -1,0 +1,53 @@
+{
+  "text": "Corporate Relocation",
+  "children": [
+    {
+      "text": "Functional",
+      "type": "functional",
+      "children": [
+        {
+          "text": "Data",
+          "children": [
+            {
+              "description": "check relocation data on web page",
+              "text": "app data check",
+              "id": "mm"
+            },
+            {
+              "description": "check email confirmations",
+              "id": "email",
+              "text": "app data check"
+            }
+          ]
+        },
+        {
+          "text": "Confirmation",
+          "children": [
+            {
+              "description": "check email confirmation",
+              "text": "batch check"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Non Functional",
+      "type": "nonfunctional",
+      "children": [
+        {
+          "subType": "Data",
+          "description": "check relocation data on web page",
+          "text": "app data check",
+          "id": "log"
+        },
+        {
+          "subType": "Availability",
+          "description": "check email confirmation",
+          "text": "batch check",
+          "id": "url"
+        }
+      ]
+    }
+  ]
+}

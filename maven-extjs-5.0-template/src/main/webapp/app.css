@@ -1,0 +1,17 @@
+.icon-red {
+	background-image: url(images/icons/red.png) !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.icon-green {
+	background-image: url(images/icons/green.png) !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.icon-gray {
+	background-image: url(images/icons/gray.png) !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
