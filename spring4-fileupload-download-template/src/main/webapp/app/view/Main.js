@@ -2,32 +2,27 @@ Ext.define('MyApp.view.Main', {
 	extend : 'Ext.form.Panel',
 	xtype : 'app-main',
 	title : 'File Upload download utility',
-	modal : true,
+	height : '500px',
+	autoScroll : true,
 	border : false,
 	standardSubmit : false,
 	headers : {
 		'Content-type' : 'multipart/form-data'
 	},
-	maxHeight : '50',
+	// maxHeight : '50',
 	layout : {
-		type : 'column'
+		type : 'anchor'
 	},
 	items : [{
 				xtype : 'fileuploadfield',
-				columnWidth : 0.8,
-				maxWidth : '450',
-				padding : '1 150 50 5',
 				name : 'file',
+				anchor : '50%',
 				msgTarget : 'side',
-				// allowBlank : false,
 				buttonText : 'Browse...'
 			}, {
 				xtype : 'button',
-				maxWidth : '100',
-				text : 'Start Importing',
-				padding : '1 1 1 1',
-				height : 25,
-				columnWidth : 0.15,
+				text : 'Upload',
+				anchor : '10%',
 				handler : function() {
 					try {
 						var form = this.up('form').getForm();
@@ -71,6 +66,32 @@ Ext.define('MyApp.view.Main', {
 					}
 
 				}// end of handler
+			}, {
+				xtype : 'button',
+				text : 'Download',
+				anchor : '10%',
+				handler : function() {
+					console.log('Download Button click');
+					var form = Ext.create('Ext.form.Panel', {
+								standardSubmit : true
+							});
+					var urlhome = 'action/file/download';
+					form.submit({
+								target : '_blank',
+								params : {
+									p1 : 'parameter1',
+									p2 : 'parameter2'
+								},
+								url : urlhome,
+								method : 'POST',
+								headers : {
+									'Content-Type' : 'application/json'
+								}
+							});
+					Ext.defer(function() {
+								form.close();
+							}, 100);
+				}
 			}]
 
 });
