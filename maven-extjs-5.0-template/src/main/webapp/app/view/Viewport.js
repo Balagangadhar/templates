@@ -4,20 +4,21 @@
  * @extends Ext.Viewport
  */
 Ext.define('MyApp.view.Viewport', {
-			extend : 'Ext.Viewport',
-			layout : 'fit',
+	extend : 'Ext.Viewport',
+	layout : 'fit',
 
-			requires : [],
+	requires : [],
 
-			initComponent : function() {
-				var me = this;
+	initComponent : function() {
+		var me = this;
 
-				Ext.apply(me, {
-							items : [{
-										xtype : 'dashboard'
-									}]
-						});
-
-				me.callParent(arguments);
-			}
+		Ext.apply(me, {
+			items : [ {
+				xtype : 'panel',
+				title : 'ExtJS5 sample application'
+			} ]
 		});
+
+		me.callParent(arguments);
+	}
+});
