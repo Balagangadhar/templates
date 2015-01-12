@@ -1,14 +1,13 @@
-Ext.define('MyApp.view.ViewModelMain', {
+Ext.define('MyApp.view.mvvm.Main', {
 			extend : 'Ext.panel.Panel',
-			xtype : 'viewmodelmain',
+			xtype : 'main-viewmodel',
 			layout : 'anchor',
-			controller : 'viewmodelcontroller',
 			bind : {
 				title : '{panelTitle}'
 			},
 			title : 'test',
 			viewModel : {
-				type : 'panelviewmodel'
+				type : 'main-viewmodel'
 			},
 			items : [{
 						xtype : 'textfield',
@@ -25,16 +24,6 @@ Ext.define('MyApp.view.ViewModelMain', {
 				this.callParent(arguments);
 			},
 			tbar : [{
-						text : 'MVC',
-						handler : 'openMVC'
-					}, {
-						text : 'Routing',
-						handler : 'openRouting'
-					}, {
-						text : 'MVVM',
-						handler : 'openMVVM'
-					}, {
-						text : 'View Controller',
-						handler : 'openViewController'
+						xtype : 'breadcrumb-view'
 					}]
 		});

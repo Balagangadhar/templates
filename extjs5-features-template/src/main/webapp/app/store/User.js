@@ -1,10 +1,9 @@
-Ext.define('MyApp.store.ListView', {
+Ext.define('MyApp.store.User', {
 	extend : 'Ext.data.Store',
-	model : 'MyApp.model.ListView',
-	autoLoad : true,
+	model : 'MyApp.model.User',
 	proxy : {
 		type : 'ajax',
-		url : 'data.json',
+		url : 'users.json',
 		reader : {
 			type : 'json',
 			rootProperty : 'data'

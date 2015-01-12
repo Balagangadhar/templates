@@ -28,6 +28,7 @@ Ext.application({
 	},
 	onUnmatchedRoute : function(hash) {
 		console.log('Unmatched', hash);
+		Ext.Msg.alert('Warning','Unmatched URI, redirecting to Home');
 		this.redirectTo('#home');
 	},
 	autoCreateViewport : true

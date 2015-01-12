@@ -18,10 +18,22 @@
 		"description" : "Click on launch for model-view-viewController flows",
 		"url" : "Launch MVVM Demo"
 	}, {
-		"sno" : 3,
+		"sno" : 4,
 		"tokenId" : "viewcontroller",
 		"name" : "View Controller",
 		"description" : "Click on launch and see how single/multiple views can be handled in view controller",
 		"url" : "Launch View Controller Demo"
+	}, {
+		"sno" : 5,
+		"tokenId" : "breadcrumb",
+		"name" : "Breadcrumb",
+		"description" : "Change breadcrumb values in the tbar",
+		"url" : "Breadcrumb demo"
+	},{
+		"sno" : 6,
+		"tokenId" : "session",
+		"name" : "Session",
+		"description" : "Using Session to bind complex associations",
+		"url" : "Session Demo"
 	}]
 }

@@ -1,8 +1,7 @@
-Ext.define('MyApp.view.ListView', {
+Ext.define('MyApp.view.mvc.List', {
 	extend : 'Ext.grid.Panel',
-	xtype : 'listview',
-	store : 'MyApp.store.ListView',
-	controller : 'listviewcontroller',
+	xtype : 'list-view',
+	store : 'MyApp.store.List',
 	columns : [ {
 		xtype : 'numbercolumn',
 		text : 'S.No.',
@@ -30,16 +29,6 @@ Ext.define('MyApp.view.ListView', {
 		this.callParent(arguments);
 	},
 	tbar : [ {
-		text : 'MVC',
-		handler : 'openMVC'
-	}, {
-		text : 'Routing',
-		handler : 'openRouting'
-	}, {
-		text : 'MVVM',
-		handler : 'openMVVM'
-	}, {
-		text : 'View Controller',
-		handler : 'openViewController'
+		xtype : 'breadcrumb-view'
 	} ]
 });

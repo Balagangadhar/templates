@@ -1,18 +1,14 @@
 Ext.define('MyApp.Application', {
 	extend : 'Ext.app.Application',
-	views : [ 'MyApp.view.ListView', 'MyApp.view.Accordion',
-			'MyApp.view.ParentPanel', 'MyApp.view.AccordionViewController',
-			'MyApp.view.ViewModelMain', 'MyApp.view.panelViewModel',
-			'MyApp.view.ViewModelController', 'MyApp.view.ListViewController'
-	// TODO: add views here
-	],
+	views : ['MyApp.view.mvc.List', 'MyApp.view.mvvm.Main',
+			'MyApp.view.mvvm.MainViewModel',
+			'MyApp.view.viewcontroller.Accordion',
+			'MyApp.view.viewcontroller.AccordionViewController',
+			'MyApp.view.breadcrumb.Breadcrumb', 'MyApp.view.session.List',
+			'MyApp.view.session.UserViewController', 'MyApp.view.session.UserWindow'],
 
-	controllers : [ 'MyApp.controller.Main'
+	controllers : ['MyApp.controller.Main'],
+	models : ['MyApp.model.List', 'MyApp.model.User'],
 
-	// TODO: add controllers here
-	],
-
-	stores : [
-	// TODO: add stores here
-	]
+	stores : ['MyApp.store.List', 'MyApp.store.User']
 });
