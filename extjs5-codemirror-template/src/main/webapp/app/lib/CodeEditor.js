@@ -1,7 +1,9 @@
 Ext.define('MyApp.lib.CodeEditor', {
 			extend : 'Ext.panel.Panel',
 			alias : 'widget.codeeditor',
-
+			mixins : {
+				field : 'Ext.form.field.Field'
+			},
 			value : "",
 
 			rtlMoveVisually : false,
@@ -43,44 +45,36 @@ Ext.define('MyApp.lib.CodeEditor', {
 
 			themeSelector : false,
 
+			isDirty : function() {
+				return this.dirty;
+			},
+
+			setDirty : function(dirty) {
+				this.dirty = dirty;
+				this.fireEvent('dirtychange', dirty);
+			},
+			setValue : function(value) {
+				if (Ext.isFunction(this.editor.setValue)) {
+					this.editor.setValue(value);
+					this._originalValue = value;
+					this.setDirty(false);
+
+				}
+			},
+			getModelData : function(includeEmptyText, isSubmitting) {
+				var field = this, data = null;
+				if (!field.disabled && (field.submitValue || !isSubmitting)) {
+					data = {};
+					data[field.getFieldIdentifier()] = this.editor.getValue();
+				}
+				return data;
+			},
+
 			initComponent : function() {
 				var me = this;
-				me.editor = Ext.widget('box', {
-							cls : 'background-color : red !important'
-						});
+				me.editor = Ext.widget('box');
 				me._originalValue = me.value;
 
-				me._field = Ext.widget('field', {
-							hidden : true,
-							name : me.name,
-							isDirty : function() {
-								return this.dirty;
-							},
-							setDirty : function(dirty) {
-								this.dirty = dirty;
-								this.fireEvent('dirtychange', dirty);
-							},
-							setValue : function(value) {
-								if (Ext.isFunction(me.editor.setValue)) {
-									me.editor.setValue(value);
-									me._originalValue = value;
-									this.setDirty(false);
-
-								}
-							},
-							getModelData : function(includeEmptyText,
-									isSubmitting) {
-								var field = this, data = null;
-								if (!field.disabled
-										&& (field.submitValue || !isSubmitting)) {
-									data = {};
-									data[field.getFieldIdentifier()] = me.editor
-											.getValue();
-								}
-								return data;
-							}
-
-						})
 				var tButtons = me.tButtons
 						? Ext.Array.push([], me.tButtons)
 						: [];
@@ -92,7 +86,7 @@ Ext.define('MyApp.lib.CodeEditor', {
 					tButtons.push(me.createThemeComboBox(me));
 				}
 				Ext.apply(me, {
-							items : [me.editor, me._field],
+							items : [me.editor],
 							tbar : tButtons,
 							bbar : bButtons
 						})
@@ -156,7 +150,7 @@ Ext.define('MyApp.lib.CodeEditor', {
 
 			},
 			updateFieldDirty : function(editor, me) {
-				me._field.setDirty(me._originalValue != editor.getValue());
+				me.setDirty(me._originalValue != editor.getValue());
 			},
 			createThemeComboBox : function(me) {
 				return {
