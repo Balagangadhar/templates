@@ -1,4 +1,0 @@
-# This path will be available in class path. Copy resources that need to be accessed from classpath. 
-*
-# Ignore this file
-!.gitignore
