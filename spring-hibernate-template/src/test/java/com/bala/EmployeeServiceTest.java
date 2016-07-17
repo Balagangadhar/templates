@@ -25,9 +25,15 @@ public class EmployeeServiceTest {
 	}
 
 	@Test
+	public void search() {
+		List<Employee> employees = employeeService.getAll("mark");
+		System.out.println(employees);
+	}
+
+	@Test
 	public void create() {
 		Employee emp = new Employee();
-		emp.setFirstName("William Smith");
+		emp.setFirstName("Mark123");
 		emp = employeeService.create(emp);
 		System.out.println(emp);
 	}

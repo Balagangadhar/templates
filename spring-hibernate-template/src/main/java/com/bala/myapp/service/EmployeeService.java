@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bala.myapp.data.dao.EmployeeDAOImpl;
 import com.bala.myapp.data.entity.Employee;
 
 @Service
-//@Transactional
+// @Transactional
 public class EmployeeService {
 
 	@Autowired
@@ -18,6 +17,10 @@ public class EmployeeService {
 
 	public List<Employee> getAll() {
 		return employeeDAOImpl.getAll();
+	}
+
+	public List<Employee> getAll(String searchStr) {
+		return employeeDAOImpl.getAll(searchStr);
 	}
 
 	public Employee get(String id) {

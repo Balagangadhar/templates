@@ -9,7 +9,7 @@ public class AbstractDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	protected Session getCurrentSession() {
+	protected Session openSession() {
 		return sessionFactory.openSession();
 	}
 
